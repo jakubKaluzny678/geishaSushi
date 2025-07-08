@@ -1,0 +1,318 @@
+    html, body {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6rem;
+    scroll-behavior: smooth;
+}
+.navbar .nav-link {
+  display: inline-block;
+  position: relative;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.navbar .nav-link::after {
+  all: unset;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.2rem;
+  width: 0;
+  height: 2px;
+  background-color: #ff5c00;
+  transition: width 0.3s ease-in-out;
+}
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 80dvh; 
+}
+.sushiImg {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+}
+.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+.img-wrapper {
+    position: relative;
+    display: block;
+}
+.whoAreWeImg {
+  width: 100%;
+  height: auto;
+}
+#forwardButton {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  transition: 0.6s ease;
+  background-color: #f54900;
+  padding: 1rem;
+    &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -60%);
+  }
+}
+.transition-section {
+  margin-top: 0.3rem;
+  background: linear-gradient(to top, #000 60%, #111);
+  padding: 6rem 0;
+  text-align: center;
+  margin-top: 23.5rem;
+}
+@media (max-width: 768px) {
+  .transition-section {
+    margin-top: 5rem;
+  }
+}
+.transition-content h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+.divider-line {
+  width: 80px;
+  height: 4px;
+  margin: 0 auto;
+  background-color: #ff5c00;
+  border-radius: 10px;
+}
+.aboutUs {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.whoAreWe {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.aboutCatering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+}
+.textContainer {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100%;
+}
+.cateringBtn {
+  background-color: #f54900;
+  color: #fff;
+  transition: transform 0.6s ease;
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: #f54900 !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    outline: none;
+    border: none;
+  }
+}
+footer {
+  background: linear-gradient(to top, #000 60%, #111);
+  a {
+    text-decoration: none;
+    color: #fff;
+}
+}
+.cta-content {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-link {
+    a {
+    border-bottom: none;
+    transition: border-bottom 0.6s ease;
+    }
+    &:hover {
+      border-bottom: #f54900 2px solid;
+    }
+  }
+.callIcon {
+  &:hover {
+    color: #00c950;
+  }
+}
+.geoIcon {
+  &:hover {
+    color: #fb2c36;
+  }
+}
+.footerContact {
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.footerNav {
+  max-width: 8rem;
+  li {
+    border-bottom: transparent 2px solid;
+    transition: border-color 0.6s ease;
+    &:hover {
+    border-bottom: #f54900 2px solid;
+  }
+  }
+}
+.visitUsFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; 
+}
+.messageSent {
+  color: #00c950;
+}
+.messageErr {
+  color: red;
+}
+.backToMainBtn {
+  color: #fff;
+  transition: 0.6s ease;
+  background-color: #f54900;
+  padding: 1rem;
+    &:hover {
+    background-color: #f54900;
+    color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+  }
+}
+@media (min-width: 769px) {
+  .navbar-nav {
+    background: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav{
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+}
+.footer-social {
+  display: flex;
+  flex-direction: row;
+}
+.textContainer {
+  max-width: 50%;
+}
+.wrapper {
+  max-width: 18rem;
+}
+.sushiImg {
+        max-height: 53rem;
+    }
+    }
+    #forwardButton {
+        top: 98%;
+    }
+    .whoAreWe {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      font-size: 1rem;
+      max-width: 20rem;
+    }
+      .heading {
+        font-weight: bold;
+        font-size: 1.35rem;
+      }
+#scrollSideBar {
+    display: none;
+    visibility: hidden;
+}
+.contactSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.contactForm {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input, 
+  textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+    background-color: #000;
+    border-color: #f54900;
+    &:focus {
+      border-color: #ffa15c;
+      box-shadow: 0 0 8px rgba(255, 92, 0, 0.5);
+      outline: none;
+    }
+    &::placeholder {
+      color: #fff;
+    }
+  }
+}
+#delForm {
+  background-color: #ff5c00;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+}
+.submitBtn {
+  background-color: #ff5c00;
+  color: #fff;
+  transition: background-color, 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  &:hover {
+    background-color: #d64f01;
+    box-shadow: 0 0 12px rgba(255, 92, 0, 0.5);
+    transform: translateY(-2px);
+  }
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23f54900' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

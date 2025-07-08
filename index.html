@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="icon" href="./src/images/maki.png">
+  <title>Geisha Sushi</title>
+  <style>
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top" id="navScript">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse rounded-4" id="navbarNav">
+      <ul class="navbar-nav mx-auto gap-4 ">
+        <li class="nav-item" >
+          <a class="nav-link navbarFontColour" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link navbarFontColour" href="#">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a href="#aboutUsId" class="nav-link navbarFontColour">O nas</a>
+        </li>
+          <script>
+            function goToAboutUs() {
+              window.location.href = "index.html/#aboutUsId";
+            }
+          </script>
+        <li class="nav-item">
+          <a href="contact.php" class="nav-link navbarFontColour">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="hero">
+  <div class="img-wrapper">
+    <img src="./src/images/Fotolia_50171619_Subscription_Monthly_M.webp"
+         class="sushiImg img-fluid"
+         width="1200"
+         height="800"
+         alt="Sushi catering hero image"
+         loading="eager"
+         fetchpriority="high">
+         <script>
+          const sushiImg = document.querySelector('.sushiImg');
+          const sushiObserver = new IntersectionObserver((entries, sushiObserver) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('fadeIn');
+                sushiObserver.unobserve(entry.target);                
+              }
+            })
+          }, { threshold: 0.1});
+          sushiObserver.observe(sushiImg);
+         </script>
+    <a href="#aboutCatering" class="btn btn-lg" id="forwardButton">Sprawdź naszą ofertę</a>
+  </div>
+</section>
+<section class="transition-section">
+  <div class="transition-content">
+    <h1 data-aos="-up">Nasza pasja zaczyna się tutaj</h1>
+    <div class="divider-line" data-aos="-in" data-aos-delay="200"></div>
+  </div>
+</section>
+<section class="aboutUs mt-5 mb-5" id="aboutUsId">
+  <div class="whoAreWe">
+    <img src="./src/images/Fotolia_46851856_Subscription_Monthly_M.webp" class="rounded-4 img-fluid whoAreWeImg" width="1694" height="1122" alt="">
+    <span class="heading">Sushi tworzone z pasją i precyzją</span>
+    <p>Wybieramy tylko najświeższe i najlepsze składniki, tworząc sushi z najwyższą precyzją i sercem. <br>
+          To smak, który zapamiętasz na długo.
+      </p>
+  </div>
+</section>
+<section class="transition-section mt-5">
+  <div class="transition-content">
+    <h1 data-aos="-up">Rzuć okiem na naszą ofertę</h1>
+    <div class="divider-line" data-aos="zoom-in" data-aos-delay="200"></div>
+  </div>
+</section>
+<section>
+  <div class="aboutCatering" id="aboutCatering">
+            <img src="./src/images/istockphoto-1555947107-1024x1024.webp" loading="lazy" height="300" width="400" alt="" class="">
+              <div class="textContainer text-center">
+                <p class="mt-3">
+                <span class="fw-semibold fs-4">Sushi catering na każdą okazję</span> <br>
+                <span class="fw-semibold fs-5 mt-3">Świeże zestawy sushi na eventy firmowe, <br>
+                   wesela i rodzinne uroczystości.</span>
+                </p>
+                <p class="fs-6">
+                  Każdy nasz catering przygotowujemy z pasją i dbałością o detale. <br>
+                   Dzięki starannie wyselekcjonowanym składnikom i estetycznej prezentacji, <br>
+                    Twoi goście poczują prawdziwy smak Japonii.
+                </p>
+              </div>
+        <div class="cta-content mt-5">
+      <span class="cta-heading mb-4 fs-3 fw-semibold" data-aos="-up">Zamów sushi catering już dziś!</span>
+      <a href="contact.php" class="btn btn-lg cateringBtn" >Skontaktuj się z nami</a>
+    </div>
+  </div>
+  </div>
+</section>
+  </div>
+  <div class="container py-5" data-aos="-up">
+    <!-- placeholder -->
+  </div>
+<footer class="footer bg-dark text-white py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-4">
+    <nav class="footer-nav">
+      <ul class="list-unstyled d-flex gap-3 mb-0 d-flex flex-column">
+        <li><a href="#" class="footer-link">Home</a></li>
+        <li><a href="#" class="footer-link">Menu</a></li>
+        <li><a href="#aboutUsId" class="footer-link">O nas</a></li>
+      </ul>
+    </nav>
+    <div class="footer-social" id="footerSocial">
+      <script>
+        const footerSocial = document.getElementById('footerSocial');
+        if (window.innerWidth < 768) {
+            footerSocial.style.flexDirection = 'row';
+        } 
+      </script>
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+    </div>
+    <div class="footer-delivery">
+      <span class="fs-2 fw-semibold">Dostawa</span>
+      <p class="mb-1">Dowóz w Kaliszu: 8 zł</p>
+      <p class="mb-0">Okolice miasta: 12-20 zł</p>
+    </div>
+    <div class="footer-contact ">
+      <span class="fs-2 fw-semibold">Kontakt</span>
+      <p><a href="tel:515078301" class="footer-link"><i class="bi bi-telephone-fill"></i> 515 078 301</a></p>
+      <p><a href="https://maps.app.goo.gl/LzziFVwiTLCcFyjW9" target="_blank" class="footer-link"><i class="bi bi-geo-alt-fill"></i> Kalisz</a></p>
+      <h6 class="mt-3">Godziny otwarcia</h6>
+      <ul class="list-unstyled mb-0">
+        <li>Pon - Czw: 12:00 - 21:00</li>
+        <li>Pt - Sob: 12:00 - 22:00</li>
+        <li>Ndz: 12:00 - 21:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="text-center mt-4 small text-muted">
+    &copy; 2025 Geisha Sushi. Wszelkie prawa zastrzeżone.
+  </div>
+</footer>
+
+</main>
+  <script>
+window.addEventListener('load', updateNavCenter);
+window.addEventListener('resize', updateNavCenter);
+  </script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, 
+    easing: 'ease-in-out', 
+    once: true, 
+  });
+</script>
+</body>
+</html>
