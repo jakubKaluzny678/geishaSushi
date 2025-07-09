@@ -4,6 +4,7 @@
     overflow-x: hidden;
     line-height: 1.6rem;
     scroll-behavior: smooth;
+    min-height: 200vh;
 }
 .navbar .nav-link {
   display: inline-block;
@@ -30,76 +31,107 @@
 .navbar .nav-link:hover::after {
   width: 100%;
 }
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-height: 80dvh; 
+.hero-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -4rem;
+  gap: 2rem;
+  z-index: 2;
+  height: 100vh;
 }
-.sushiImg {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 0.6s ease-out;
+.goForwardBtn {
+  background-color: #d64f01;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    background-color: #e66922 !important; 
+    box-shadow: 0 0 8px rgba(255, 92, 0, 0.5);
+    outline: none;
+    }
+}
+.hero-heading {
+  color: #c2b9b9;
+}
+.heroDescription {
+  color: #c2b9b9;
+}
+.hero-content-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 .fadeIn {
   opacity: 1;
   transform: translateX(0);
 }
-.img-wrapper {
-    position: relative;
-    display: block;
-}
 .whoAreWeImg {
   width: 100%;
   height: auto;
 }
-#forwardButton {
-  position: absolute;
-  top: 105%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
+.aboutUs {
+  padding: 4rem 0;
   color: #fff;
-  transition: 0.6s ease;
-  background-color: #f54900;
-  padding: 1rem;
-    &:hover {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    transform: translate(-50%, -60%);
-  }
 }
-.transition-section {
-  margin-top: 0.3rem;
-  background: linear-gradient(to top, #000 60%, #111);
-  padding: 6rem 0;
-  text-align: center;
-  margin-top: 23.5rem;
+.aboutUs-heading {
+ font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+ font-weight: 700;
+ text-align: center;
+ margin-bottom: 2rem;
+}
+.aboutUsContent {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 768px) {
-  .transition-section {
-    margin-top: 5rem;
+  .aboutUsContent {
+    flex-direction: column;
   }
 }
-.transition-content h1 {
-  font-family: 'Poppins', sans-serif;
+.aboutUsText {
   color: #fff;
-  font-size: 2rem;
-  letter-spacing: 0.1rem;
-  margin-bottom: 1rem;
+  text-align: justify;
+  line-height: 1.6rem;
+  font-size: 1rem;
+  margin: auto;
 }
-.divider-line {
-  width: 80px;
-  height: 4px;
-  margin: 0 auto;
-  background-color: #ff5c00;
-  border-radius: 10px;
+.placeholder {
+  height: 15dvh;
 }
-.aboutUs {
+.lane-divider {
+  border-bottom: #f54900 4px solid;
+  width: 80%;
+  margin: auto;
+}
+.checkMenu {
+  background-color: #f54900;
+  color: #fff;
+  &:hover {
+    background-color: #e66922 !important;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  }
+}
+.aboutUsBtn {
+  margin-top: 1.5rem;
+  background-color: #d64f01;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+.aboutUsImg {
+  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin: auto;
 }
 .whoAreWe {
   display: flex;
@@ -119,6 +151,10 @@
   align-items: center;
   flex-direction: column;
   max-width: 100%;
+}
+.textContainerMobile {
+  display: flex;
+  flex-direction: column;
 }
 .textContainer {
   color: #fff;
@@ -206,21 +242,6 @@ footer {
 .messageSent {
   color: #00c950;
 }
-.messageErr {
-  color: red;
-}
-.backToMainBtn {
-  color: #fff;
-  transition: 0.6s ease;
-  background-color: #f54900;
-  padding: 1rem;
-    &:hover {
-    background-color: #f54900;
-    color: #fff;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    transform: translateY(2px);
-  }
-}
 @media (min-width: 769px) {
   .navbar-nav {
     background: none;
@@ -242,30 +263,7 @@ footer {
 }
 .wrapper {
   max-width: 18rem;
-}
-.sushiImg {
-        max-height: 53rem;
-    }
-    }
-    #forwardButton {
-        top: 98%;
-    }
-    .whoAreWe {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      font-size: 1rem;
-      max-width: 20rem;
-    }
-      .heading {
-        font-weight: bold;
-        font-size: 1.35rem;
-      }
-#scrollSideBar {
-    display: none;
-    visibility: hidden;
-}
+}}
 .contactSection {
   display: flex;
   justify-content: center;

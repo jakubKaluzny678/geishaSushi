@@ -43,75 +43,81 @@
 </nav>
 <main>
 <section class="hero">
-  <div class="img-wrapper">
-    <img src="./src/images/Fotolia_50171619_Subscription_Monthly_M.webp"
-         class="sushiImg img-fluid"
-         width="1200"
-         height="800"
-         alt="Sushi catering hero image"
-         loading="eager"
-         fetchpriority="high">
-         <script>
-          const sushiImg = document.querySelector('.sushiImg');
-          const sushiObserver = new IntersectionObserver((entries, sushiObserver) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('fadeIn');
-                sushiObserver.unobserve(entry.target);                
-              }
-            })
-          }, { threshold: 0.1});
-          sushiObserver.observe(sushiImg);
-         </script>
-    <a href="#aboutCatering" class="btn btn-lg" id="forwardButton">Sprawdź naszą ofertę</a>
+  <video src="./src/images/3295852-uhd_4096_2160_25fps.mp4" type="video/mp4" class="hero-content-video" autoplay loop muted></video>
+  <div class="hero-content">
+    <div class="hero-overlay"></div>
+    <h1 class="hero-heading fw-semibold text-center">Odkryj najlepsze sushi w Kaliszu</h1>
+    <span class="heroDescription text-center">Świeże składniki. Tradycyjne japońskie receptury.</span>
+    <button type="button" class="btn goForwardBtn" onclick="goForward();">Zobacz więcej</button>
+    <script>
+      function goForward() {
+        window.location.href = '#aboutUs';
+      }
+    </script>
   </div>
 </section>
-<section class="transition-section">
-  <div class="transition-content">
-    <h1 data-aos="-up">Nasza pasja zaczyna się tutaj</h1>
-    <div class="divider-line" data-aos="-in" data-aos-delay="200"></div>
+<div class="placeholder"></div>
+<div class="lane-divider">
+</div>
+<section class="aboutUs" id="aboutUs">
+  <div class="aboutUsContainer">
+    <h2 class="aboutUs-heading">
+      Sushi tworzone z pasją i precyzją
+    </h2>
+    <div class="aboutUsContent">
+      <div class="aboutUsText text-center">
+        <p>
+          Wybieramy tylko najświeższe i najlepsze składniki, tworząc sushi z najwyższą precyzją i sercem. To smak, który zapamiętasz na długo.
+        </p>
+        <button class="btn checkMenu" onclick="goToMenu()">Poznaj nasze menu</button>
+        <script>
+          function goToMenu() {
+            window.location.href = 'menu.html';
+          }
+        </script>
+      </div>
+      <div class="aboutUsImg">
+        <img src="./src/images/Fotolia_46851856_Subscription_Monthly_M.webp" width="1694" height="1122" class="img-fluid" alt="">
+      </div>
+    </div>
   </div>
 </section>
-<section class="aboutUs mt-5 mb-5" id="aboutUsId">
-  <div class="whoAreWe">
-    <img src="./src/images/Fotolia_46851856_Subscription_Monthly_M.webp" class="rounded-4 img-fluid whoAreWeImg" width="1694" height="1122" alt="">
-    <span class="heading">Sushi tworzone z pasją i precyzją</span>
-    <p>Wybieramy tylko najświeższe i najlepsze składniki, tworząc sushi z najwyższą precyzją i sercem. <br>
-          To smak, który zapamiętasz na długo.
-      </p>
-  </div>
-</section>
-<section class="transition-section mt-5">
-  <div class="transition-content">
-    <h1 data-aos="-up">Rzuć okiem na naszą ofertę</h1>
-    <div class="divider-line" data-aos="zoom-in" data-aos-delay="200"></div>
-  </div>
-</section>
+<div class="lane-divider"></div>
+<div class="placeholder"></div>
 <section>
   <div class="aboutCatering" id="aboutCatering">
             <img src="./src/images/istockphoto-1555947107-1024x1024.webp" loading="lazy" height="300" width="400" alt="" class="">
-              <div class="textContainer text-center">
+              <div class="textContainerDesktop text-center text-white">
                 <p class="mt-3">
                 <span class="fw-semibold fs-4">Sushi catering na każdą okazję</span> <br>
-                <span class="fw-semibold fs-5 mt-3">Świeże zestawy sushi na eventy firmowe, <br>
-                   wesela i rodzinne uroczystości.</span>
                 </p>
                 <p class="fs-6">
                   Każdy nasz catering przygotowujemy z pasją i dbałością o detale. <br>
-                   Dzięki starannie wyselekcjonowanym składnikom i estetycznej prezentacji, <br>
-                    Twoi goście poczują prawdziwy smak Japonii.
+                  Dzięki starannie wyselekcjonowanym składnikom i estetycznej prezentacji, <br>
+                  Twoi goście poczują prawdziwy smak Japonii.
                 </p>
               </div>
-        <div class="cta-content mt-5">
-      <span class="cta-heading mb-4 fs-3 fw-semibold" data-aos="-up">Zamów sushi catering już dziś!</span>
+              <div class="textContainerMobile text-center mt-4">
+                <span class="fw-semibold text-white fs-4">Sushi catering na każdą okazję</span>
+                <span class="text-white mt-3">Świeże zestawy sushi na eventy firmowe, <br>
+                   wesela i rodzinne uroczystości.</span>
+              </div>
+                      <div class="cta-content mt-5">
+      <span class="cta-heading mb-4 fs-3 fw-semibold text-center">Zamów sushi catering już dziś!</span>
       <a href="contact.php" class="btn btn-lg cateringBtn" >Skontaktuj się z nami</a>
     </div>
+                  <script>
+                  const desktopTextContainer = document.querySelector('.textContainerDesktop');
+                  const mobileTextContainer = document.querySelector('.textContainerMobile');
+                  if (window.innerWidth < 768 || window.innerWidth === 768) {
+                    desktopTextContainer.style.display = 'none';
+                  } else {
+                    mobileTextContainer.style.display = 'none';
+                  }
+                </script>
   </div>
   </div>
 </section>
-  </div>
-  <div class="container py-5" data-aos="-up">
-    <!-- placeholder -->
   </div>
 <footer class="footer bg-dark text-white py-4 mt-5">
   <div class="container d-flex flex-column flex-md-row justify-content-between gap-4">
@@ -154,7 +160,6 @@
     &copy; 2025 Geisha Sushi. Wszelkie prawa zastrzeżone.
   </div>
 </footer>
-
 </main>
   <script>
 window.addEventListener('load', updateNavCenter);
