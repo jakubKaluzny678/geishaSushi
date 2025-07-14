@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Test IntersectionObserver</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: white;
+    }
+    /* Duży pusty blok wymuszający scroll */
+    .spacer {
+      height: 150vh;
+      background: #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    /* Twoja sekcja */
+    .aboutUs {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: transform 0.6s ease, opacity 0.6s ease;
+      padding: 4rem 2rem;
+      background: #111;
+      max-width: 600px;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+    .fadeIn {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spacer">Scroll down</div>
+
+  <section class="aboutUs" id="aboutUs">
+    <h2>Sushi tworzone z pasją i precyzją</h2>
+    <p>Wybieramy tylko najświeższe i najlepsze składniki...</p>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const aboutUs = document.querySelector('.aboutUs');
+      if (!aboutUs) {
+        console.error('.aboutUs element nie znaleziony');
+        return;
+      }
+      const aboutUsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          console.log('Intersection:', entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fadeIn');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      aboutUsObserver.observe(aboutUs);
+    });
+  </script>
+
+</body>
+</html>

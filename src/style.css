@@ -87,6 +87,7 @@ html, body {
 }
 
 .aboutUs {
+  opacity: 0;
   padding: 4rem 0;
   color: #fff;
 }
@@ -203,6 +204,7 @@ html, body {
 }
 
 footer {
+  max-height: 10rem;
   background: linear-gradient(to top, #000 60%, #111);
 }
 footer a {
@@ -308,7 +310,7 @@ footer a {
 }
 .contactForm input,
 .contactForm textarea {
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 6px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   color: #fff;

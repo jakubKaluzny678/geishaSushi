@@ -76,6 +76,7 @@
   height: auto;
 }
 .aboutUs {
+  opacity: 0;
   padding: 4rem 0;
   color: #fff;
 }
@@ -179,6 +180,7 @@
   }
 }
 footer {
+  max-height: 10rem;
   background: linear-gradient(to top, #000 60%, #111);
   a {
     text-decoration: none;
@@ -279,7 +281,7 @@ footer {
   flex-direction: column;
   input, 
   textarea {
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 6px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     color: #fff;

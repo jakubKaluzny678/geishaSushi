@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php");
+  exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -6,7 +13,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="../src/style.css">
   <link rel="icon" href="./src/images/maki.png">
   <title>Geisha Sushi</title>
 </head>
@@ -45,7 +52,7 @@
         <?php 
         $con = mysqli_connect("localhost", "root", "", "sushiMessages");
         if (isset($_POST['usun_id'])) {
-        $usunId = (int)$_POST['usun_id']; // i tak castujemy na int
+        $usunId = (int)$_POST['usun_id']; 
         $delMsg = "DELETE FROM messages WHERE id = $usunId";
         mysqli_query($con, $delMsg);
         };
@@ -54,7 +61,7 @@
         while ($row = mysqli_fetch_array($display)) {
             $messageId = $row[0];
             $buttonId = $row[0];
-            echo "<span class='messageSent' id='msg-$messageId'>".$row[1]."</span>"."<form method='post' onsubmit='return confirmDeletingMsg();'>
+            echo "<span class='messageSent' id='msg-$messageId'>"."Imie: ".$row['imie']."<br>"."Email: ".$row['email']."<br>"."Wiadomość: ".$row['tresc']."</span>"."<form method='post' onsubmit='return confirmDeletingMsg();'>
         <input type='hidden' name='usun_id' value='$messageId'>
         <input type='submit' value='Usuń' class='btn rounded-3 submitBtn mt-4'>
     </form>";
@@ -69,6 +76,9 @@
     </div>
   <div class="container py-5" data-aos="fade-up">
     <!-- placeholder -->
+  </div>
+    <div class="logout">
+    <a href="logout.php">Wyloguj</a>
   </div>
 <footer class="footer bg-dark text-white py-4">
   <div class="container d-flex flex-column flex-md-row justify-content-between gap-4">
