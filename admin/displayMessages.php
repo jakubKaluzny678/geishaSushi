@@ -26,18 +26,13 @@ if (!isset($_SESSION['username'])) {
     <div class="collapse navbar-collapse rounded-4" id="navbarNav">
       <ul class="navbar-nav mx-auto gap-4 ">
         <li class="nav-item" >
-          <a class="nav-link navbarFontColour" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link navbarFontColour" aria-current="page" href="../index.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link navbarFontColour" href="#">Menu</a>
         </li>
         <li class="nav-item">
-          <a href="#aboutUsId" class="nav-link navbarFontColour">O nas</a>
-          <script>
-            function goToAboutUs() {
-              window.location.href = "index.html/#aboutUsId";
-            }
-          </script>
+          <a href="#aboutUs" class="nav-link navbarFontColour">O nas</a>
         </li>
         <li class="nav-item">
           <a href="contact.php" class="nav-link navbarFontColour">Kontakt</a>
@@ -97,8 +92,7 @@ if (!isset($_SESSION['username'])) {
         } 
       </script>
       <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-      <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="text-white fs-4"><i class="bi bi-instagram mt-5"></i></a>
     </div>
     <div class="footer-delivery">
       <span class="fs-2 fw-semibold">Dostawa</span>

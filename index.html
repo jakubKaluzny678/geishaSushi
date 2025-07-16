@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Szukasz najlepszego sushi w Kaliszu? Geisha Sushi oferuje szeroki wybór świeżych rolek i szybką dostawę. Zamów już dziś i rozkoszuj się smakiem!">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -13,6 +14,44 @@
   </style>
 </head>
 <body>
+<div class="socialsWrapper">
+    <div class="floatingSocials">
+    <i class="bi bi-people-fill"></i>
+      <div class="socialsDisplay">
+          <a href="https://www.facebook.com/GeishaSushiKalisz" target="_blank" aria-label="Facebook" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/geishasushikalisz/" target="_blank" aria-label="Instagram" class="text-white fs-4"><i class="bi bi-instagram mt-5"></i></a>
+          <a href="tel:515078301" aria-label="Phone number" class="text-white fs-4"><i class="bi bi-telephone-fill"></i></a>
+      </div>
+  </div>
+</div>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const socialsWrapper = document.querySelector('.socialsWrapper');
+  const floatingSocials = document.querySelector('.floatingSocials');
+  const socialsDisplay = document.querySelector('.socialsDisplay');
+  if (window.innerWidth < 768) {
+    socialsWrapper.addEventListener("click", function () {
+      socialsDisplay.style.visibility = 'visible';
+      floatingSocials.style.visibility = 'hidden';
+    });
+    document.addEventListener("click", function (e) {
+      if (!socialsWrapper.contains(e.target)) {
+        socialsDisplay.style.visibility = 'hidden';
+        floatingSocials.style.visibility = 'visible';
+      }
+    });
+  } else {
+    socialsWrapper.addEventListener("mouseover", function () {
+      socialsDisplay.style.visibility = 'visible';
+      floatingSocials.style.visibility = 'hidden';
+    });
+    socialsWrapper.addEventListener("mouseleave", function () {
+      socialsDisplay.style.visibility = 'hidden';
+      floatingSocials.style.visibility = 'visible';
+    });
+  }
+});
+  </script>
   <nav class="navbar navbar-expand-lg fixed-top" id="navScript">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +67,9 @@
         </li>
         <li class="nav-item">
           <a href="#aboutUs" class="nav-link navbarFontColour">O nas</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.php" class="nav-link navbarFontColour">Kontakt</a>
         </li>
       </ul>
     </div>
@@ -70,7 +112,7 @@
         </script>
       </div>
       <div class="aboutUsImg">
-        <img src="./src/images/Fotolia_46851856_Subscription_Monthly_M.webp" width="1694" height="1122" class="img-fluid" alt="">
+        <img src="./src/images/Fotolia_46851856_Subscription_Monthly_M.webp" width="1694" height="1122" class="img-fluid" alt="Sushi pho">
       </div>
     </div>
   </div>
@@ -130,8 +172,7 @@
         } 
       </script>
       <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-      <a href="https://twitter.com" target="_blank" aria-label="Twitter" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="text-white fs-4"><i class="bi bi-instagram mt-5"></i></a>
     </div>
     <div class="footer-delivery">
       <span class="fs-2 fw-semibold">Dostawa</span>
@@ -142,7 +183,7 @@
       <span class="fs-2 fw-semibold">Kontakt</span>
       <p><a href="tel:515078301" class="footer-link"><i class="bi bi-telephone-fill"></i> 515 078 301</a></p>
       <p><a href="https://maps.app.goo.gl/LzziFVwiTLCcFyjW9" target="_blank" class="footer-link"><i class="bi bi-geo-alt-fill"></i> Kalisz</a></p>
-      <h6 class="mt-3">Godziny otwarcia</h6>
+      <span class="mt-3">Godziny otwarcia</span>
       <ul class="list-unstyled mb-0">
         <li>Pon - Czw: 12:00 - 21:00</li>
         <li>Pt - Sob: 12:00 - 22:00</li>
